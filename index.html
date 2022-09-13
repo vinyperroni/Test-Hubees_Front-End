@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Orçamento - NetPark</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lea0fQhAAAAANZwagI_oSx-D8o0OFeniUweK8Jo"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>Faça agora seu orçamento com a gente!</h2>
+      </div>
+      <form id="form" class="form">
+        <h3 class="section">Dados da Empresa</h3>
+        <div class="form-control">
+          <label for="businessName">Nome da Empresa</label>
+          <input
+            id="businessName"
+            placeholder="Digite o nome da empresa"
+            type="text"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="businessCnpj">CNPJ</label>
+          <input
+            id="businessCnpj"
+            placeholder="00.000.000/0001-00"
+            type="text"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="businessEmail">Email</label>
+          <input
+            id="businessEmail"
+            placeholder="Digite o email da empresa"
+            type="email"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="businessPhone">Telefone</label>
+          <input
+            id="businessPhone"
+            placeholder="Digite o telefone da empresa"
+            type="tel"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="address">Endereço</label>
+          <input id="address" placeholder="Digite o endereço" type="text" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="addressNumber">Número</label>
+          <input
+            id="addressNumber"
+            placeholder="Digite o número"
+            type="number"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="city">Cidade</label>
+          <input id="city" placeholder="Digite a Cidade" type="text" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="country">País</label>
+          <input id="country" placeholder="Digite o País" type="text" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="state">Estado</label>
+          <input id="state" placeholder="Digite o Estado" type="text" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="zipCode">CEP</label>
+          <input
+            id="zipCode"
+            placeholder="Digite o CEP do endereço"
+            type="text"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <h3 class="section">
+          Dados do contato do responsável pelo setor financeiro
+        </h3>
+        <div class="form-control">
+          <label for="financialName">Nome</label>
+          <input
+            id="financialName"
+            placeholder="Digite o nome do responsável"
+            type="text"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="financialEmail">Email</label>
+          <input
+            id="financialEmail"
+            placeholder="Digite o email do responsável"
+            type="email"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="financialPhone">Telefone</label>
+          <input
+            id="financialPhone"
+            placeholder="Digite o telefone do responsável"
+            type="tel"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+
+        <h3 class="section">Dados da garagem a ser alugada e do evento</h3>
+        <div class="form-control">
+          <label for="garageCode">Código da Garagem</label>
+          <input
+            id="garageCode"
+            placeholder="Digite o código da garagem desejada com 3 dígitos"
+            type="text"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="timeDayInitial">Início</label>
+          <input id="timeDayInitial" type="datetime-local" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="timeDayFinal">Fim</label>
+          <input id="timeDayFinal" type="datetime-local" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="qtyGuest">Quantidade de Convidados</label>
+          <input
+            id="qtyGuest"
+            placeholder="Digite a quantidade de convidados"
+            type="number"
+          />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div class="form-control">
+          <label for="eventDay">Dia do Evento</label>
+          <input id="eventDay" type="date" />
+          <i class="fas fa-exclamation-circle"></i>
+          <i class="fas fa-check-circle"></i>
+          <small>Mensagem de erro</small>
+        </div>
+        <div>
+          <label for="payBusiness">Outra empresa pagará o evento?</label>
+          <input type="checkbox" name="payBusiness" id="payBusiness" />
+        </div>
+
+        <div id="payBusinessContainer" class="payBusiness">
+          <form id="form" class="form">
+            <h3 class="section">Dados da Empresa Pagadora</h3>
+            <div class="form-control">
+              <label for="payEmail">Email</label>
+              <input
+                id="payEmail"
+                placeholder="Digite o email da empresa pagadora"
+                type="email"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            <div class="form-control">
+              <label for="payCompanyName">Nome da Empresa</label>
+              <input
+                id="payCompanyName"
+                placeholder="Digite o nome da empresa pagadora"
+                type="text"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            <div class="form-control">
+              <label for="payCompanyCnpj">CNPJ</label>
+              <input
+                id="payCompanyCnpj"
+                placeholder="00.000.000/0001-00"
+                type="text"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            <div class="form-control">
+              <label for="payResponsibleName ">Nome do Responsável</label>
+              <input
+                id="payResponsibleName"
+                placeholder="Digite o nome do responsável pela empresa"
+                type="text"
+              />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            <div class="form-control">
+              <label for="payResponsibleEmail">Email do Responsável</label>
+              <input id="payResponsibleEmail" placeholder="Digite o email do responsável pela empresa" type="email" />
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+            <div class="form-control">
+              <label for="generalObservations">Observações Gerais</label>
+              <textarea cols="30" rows="10"
+                id="generalObservations"
+                placeholder="Observações"
+                type="text"
+              ></textarea>
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>  
+
+        </div>
+        <div class="form-control">
+          <input id="token_field" type="text" autofocus />
+        </div>        
+
+        <script id="reCAPTCHA">
+          grecaptcha.ready(() => {
+            grecaptcha.execute('6Lea0fQhAAAAANZwagI_oSx-D8o0OFeniUweK8Jo', {
+              action: 'calc'
+            }).then(token => {
+              console.info('token', token);
+              token_field.value = token;
+            });
+          });
+        </script>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/abca01668c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>
