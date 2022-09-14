@@ -31,20 +31,40 @@ const payResponsibleName = document.getElementById("payResponsibleName");
 const payResponsibleEmail = document.getElementById("payResponsibleEmail");
 const generalObservations = document.getElementById("generalObservations");
 
-const token = document.getElementById("token_field");
+let haveToken = false;
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  checkInputs();
-  setSuccessFor(generalObservations);
-});
+function onSubmit(token) {
+  if (token) {
+    haveToken = true;
+    console.log(token);
+    document.getElementById("demo-form");
+    setSuccessFor(generalObservations);
+    checkInputs();
+  } else {
+    alert("internalCode: 131 - erro no Google Recaptcha ");
+  }
+}
+
+// function onClick(e) {
+//   grecaptcha.ready(function () {
+
+//     grecaptcha
+//       .execute("6Lea0fQhAAAAANZwagI_oSx-D8o0OFeniUweK8Jo", { action: "submit" })
+//       .then(function (token) {
+//         e.preventDefault();
+//         // Add your logic to submit to your backend server here.
+//       })
+//       .catch((error) => {
+//         console.log("Erro no reCAPTCHA");
+//       });
+//   });
+// }
 
 const checkbox = document.querySelector("input[name=payBusiness]");
 
 checkbox.addEventListener("change", function () {
   if (this.checked) {
     payBusinessContainer.className = "payBusinessChecked";
-    console.log("Checkbox is checked..");
   } else {
     payBusinessContainer.className = "payBusiness";
     payEmail.value = "";
@@ -53,7 +73,6 @@ checkbox.addEventListener("change", function () {
     payResponsibleName.value = "";
     payResponsibleEmail.value = "";
     generalObservations.value = "";
-    console.log("Checkbox is not checked..");
   }
 });
 
@@ -208,13 +227,8 @@ function checkInputs() {
     }
   }
 
-  const tokenValue = token.value;
-  console.log(tokenValue);
-
-  if (!tokenValue || tokenValue === "") {
+  if (!haveToken) {
     console.log({ internalCode: "131 - erro no Google Recaptcha" });
-  } else {
-    setSuccessFor(token);
   }
 
   checkForm([

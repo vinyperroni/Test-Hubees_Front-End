@@ -11,15 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <title>Orçamento - NetPark</title>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lea0fQhAAAAANZwagI_oSx-D8o0OFeniUweK8Jo"></script>
+    
   </head>
   <body>
     <div class="container">
       <div class="header">
         <h2>Faça agora seu orçamento com a gente!</h2>
       </div>
-      <form id="form" class="form">
+      <form id="demo-form" class="form">
         <h3 class="section">Dados da Empresa</h3>
         <div class="form-control">
           <label for="businessName">Nome da Empresa</label>
@@ -269,22 +270,15 @@
             </div>  
 
         </div>
-        <div class="form-control">
-          <input id="token_field" type="text" autofocus />
-        </div>        
 
-        <script id="reCAPTCHA">
-          grecaptcha.ready(() => {
-            grecaptcha.execute('6Lea0fQhAAAAANZwagI_oSx-D8o0OFeniUweK8Jo', {
-              action: 'calc'
-            }).then(token => {
-              console.info('token', token);
-              token_field.value = token;
-            });
-          });
-        </script>
-
-        <button type="submit">Enviar</button>
+        <button   
+        class="g-recaptcha" 
+        data-sitekey="6Lea0fQhAAAAANZwagI_oSx-D8o0OFeniUweK8Jo"
+        data-callback="onSubmit"
+        data-action='submit'
+        >
+        Enviar
+      </button>
       </form>
     </div>
     <script
@@ -295,3 +289,4 @@
     <script src="./scripts.js"></script>
   </body>
 </html>
+
