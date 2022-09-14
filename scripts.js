@@ -33,13 +33,14 @@ const generalObservations = document.getElementById("generalObservations");
 
 let haveToken = false;
 
-function onSubmit(token) {
+function onSubmit(token, ev) {
   if (token) {
     haveToken = true;
     console.log(token);
-    document.getElementById("demo-form");
+    document.getElementById("form");
     setSuccessFor(generalObservations);
-    checkInputs();
+    checkAndSendForm();
+    document.getElementById("demo-form").submit(ev.preventDefault());
   } else {
     alert("internalCode: 131 - erro no Google Recaptcha ");
   }
@@ -76,7 +77,7 @@ checkbox.addEventListener("change", function () {
   }
 });
 
-function checkInputs() {
+function checkAndSendForm() {
   const businessNameValue = businessName.value;
   const businessCnpjValue = businessCnpj.value;
   const businessEmailValue = businessEmail.value;
@@ -230,21 +231,23 @@ function checkInputs() {
   if (!haveToken) {
     console.log({ internalCode: "131 - erro no Google Recaptcha" });
   }
-
-  checkForm([
-    { Business: businessDataValues[1] },
-    { Financial: financialDataValues[1] },
-    { EventGarage: eventAndGarageValues[1] },
-    { PayCompany: payCompanyValues[1] },
-  ]);
-}
-
-const checkForm = (data) => {
+  console.log("ola");
   const formControls = form.querySelectorAll(".form-control");
+
+  console.log("ola2");
 
   const formIsValid = [...formControls].every((formControl) => {
     return formControl.className === "form-control success";
   });
+
+  console.log("ola3");
+
+  const data = [
+    { Business: businessDataValues[1] },
+    { Financial: financialDataValues[1] },
+    { EventGarage: eventAndGarageValues[1] },
+    { PayCompany: payCompanyValues[1] },
+  ];
 
   if (formIsValid) {
     console.log({ sucess: "O formulário está 100% preenchido!" });
@@ -252,7 +255,9 @@ const checkForm = (data) => {
   } else {
     console.log({ internalCode: "999999 - Parâmetros faltantes na chamada" });
   }
-};
+
+  console.log("ola4");
+}
 
 function postForm(data) {
   alert("Sucess");
