@@ -236,10 +236,10 @@ function checkAndSendForm() {
   });
 
   const data = [
-    { Business: businessDataValues[1] },
-    { Financial: financialDataValues[1] },
-    { EventGarage: eventAndGarageValues[1] },
-    { PayCompany: payCompanyValues[1] },
+    { Business: businessDataValues.map((value) => value[1]) },
+    { Financial: financialDataValues.map((value) => value[1]) },
+    { EventGarage: eventAndGarageValues.map((value) => value[1]) },
+    { PayCompany: payCompanyValues.map((value) => value[1]) },
   ];
 
   if (formIsValid) {
