@@ -36,7 +36,6 @@ let haveToken = false;
 function onSubmit(token, ev) {
   if (token) {
     haveToken = true;
-    console.log(token);
     document.getElementById("form");
     setSuccessFor(generalObservations);
     checkAndSendForm();
@@ -231,16 +230,10 @@ function checkAndSendForm() {
   if (!haveToken) {
     console.log({ internalCode: "131 - erro no Google Recaptcha" });
   }
-  console.log("ola");
   const formControls = form.querySelectorAll(".form-control");
-
-  console.log("ola2");
-
   const formIsValid = [...formControls].every((formControl) => {
     return formControl.className === "form-control success";
   });
-
-  console.log("ola3");
 
   const data = [
     { Business: businessDataValues[1] },
@@ -255,8 +248,6 @@ function checkAndSendForm() {
   } else {
     console.log({ internalCode: "999999 - Parâmetros faltantes na chamada" });
   }
-
-  console.log("ola4");
 }
 
 function postForm(data) {
